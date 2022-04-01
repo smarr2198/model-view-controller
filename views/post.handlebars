@@ -1,0 +1,27 @@
+<div class='text-center'>
+  <h2>{{name}}</h2>
+  <p>{{{get_emoji}}}</p>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <h3>Add Comment Here:</h3>
+
+  <form class='form new-comment-form'>
+    <div class='form-group'>
+      <label for='comment-desc'>Comment:</label>
+      <textarea
+        class='form-input'
+        id='comment-desc'
+        name='comment-desc'
+      ></textarea>
+    </div>
+
+    <button class='btn btn-primary'>Add A Comment</button>
+  </form>
+  <div>
+    {{#each post.comments as |comment|}}
+      <div>{{comment.title}}</div>
+    {{/each}}
+  </div>
+</div>
+
+{{! <script src='./../public/js/profile.js'></script> }}
