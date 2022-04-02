@@ -1,5 +1,24 @@
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+a {
+  color: lightskyblue;
+  text-decoration: none;
+}
+
+.textarea {
+  width: 75%;
+}
+
+.bg-page-color {
+  background-color: #f8f8ff;
+}
+
+.border-style {
+  border-width: thick;
+  border-color: gray;
 }
 
 .no-button {
@@ -7,7 +26,7 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: lightskyblue;
   text-decoration: none;
   font-size: 100%;
 }

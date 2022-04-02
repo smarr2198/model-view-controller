@@ -14,21 +14,23 @@
     <link rel='stylesheet' href='/css/style.css' />
   </head>
 
-  <body>
+  <body class='bg-page-color'>
     <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
+      <header
+        class='bg-secondary text-white display-flex justify-space-between align-center p-2'
+      >
         <h1>
-          <span role='img' aria-label='money'>💸</span>
-          <a href='/'>Tech Blog!</a>
+
+          <a class='' href='/'>Home</a>
         </h1>
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <a href='/profile'>profile</a>
+            <a class='' href='/profile'>Profile Dashboard</a>
             |
-            <button class='no-button' id='logout'>logout</button>
+            <button class='no-button' id='logout'>Logout</button>
           {{else}}
-            <a href='/login'>login</a>
+            <a class='' href='/login'>Login</a>
           {{/if}}
         </nav>
       </header>
