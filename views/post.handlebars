@@ -4,9 +4,10 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <h3>Add Comment Here:</h3>
-
   <form class='form new-comment-form'>
     <div class='form-group'>
+      <input value='{{id}}' type='hidden' name='post_id' />
+
       <label for='comment-desc'>Comment:</label>
       <textarea
         class='form-input'
@@ -14,14 +15,19 @@
         name='comment-desc'
       ></textarea>
     </div>
-
     <button class='btn btn-primary'>Add A Comment</button>
   </form>
+  <h3>Comments:</h3>
 
-  {{!-- {{#each post.comments as |comment|}}
-    <div>{{comment.title}}</div>
-  {{/each}} --}}
-
+  <div class=''>
+    {{#each comments as |comment|}}
+      <p class='d-flex container-md'>Created by
+        {{user.name}}
+        on
+        {{format_date date_created}}
+        {{comment.title}}</p>
+    {{/each}}
+  </div>
 </div>
 
 <script src='../js/comments.js'></script>
