@@ -17,11 +17,11 @@
 
     <button class='btn btn-primary'>Add A Comment</button>
   </form>
-  <div>
-    {{#each post.comments as |comment|}}
-      <div>{{comment.title}}</div>
-    {{/each}}
-  </div>
+
+  {{#each post.comments as |comment|}}
+    <div>{{comment.title}}</div>
+  {{/each}}
+
 </div>
 
-{{! <script src='./../public/js/profile.js'></script> }}
+{{! <script src='./js/profile.js'></script> }}
