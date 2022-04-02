@@ -21,27 +21,27 @@ const newFormHandler = async (event) => {
   }
 };
 
-const newCommentHandler = async (event) => {
-  event.preventDefault();
+// const newCommentHandler = async (event) => {
+//   event.preventDefault();
 
-  const comment = document.querySelector('#comment-desc').value.trim();
+//   const comment = document.querySelector('#comment-desc').value.trim();
 
-  if (comment) {
-    const response = await fetch(`/api/posts`, {
-      method: 'POST',
-      body: JSON.stringify({ title }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+//   if (comment) {
+//     const response = await fetch(`/api/posts`, {
+//       method: 'POST',
+//       body: JSON.stringify({ title }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
 
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to create Comment');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/');
+//     } else {
+//       alert('Failed to create Comment');
+//     }
+//   }
+// };
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -67,6 +67,6 @@ document
   .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
 
-document
-  .querySelector('.new-comment-form')
-  .addEventListener('submit', newCommentHandler);
+// document
+//   .querySelector('.new-comment-form')
+//   .addEventListener('submit', newCommentHandler);
