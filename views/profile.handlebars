@@ -32,7 +32,12 @@
           <div class='col-md-8'>
             <h4><a href='/post/{{post.id}}'>{{post.title}}</a></h4>
           </div>
-          <div class='col-md-4'>
+          <div class='d-flex col-md-4'>
+            {{!-- <button
+              id='update-list'
+              class='btn btn-sm btn-secondary mx-1'
+              data-id='{{post.id}}'
+            >UPDATE</button> --}}
             <button
               class='btn btn-sm btn-danger'
               data-id='{{post.id}}'

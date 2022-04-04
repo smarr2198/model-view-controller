@@ -8,6 +8,12 @@ a {
   text-decoration: none;
 }
 
+.title-style {
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+}
+
 .textarea {
   width: 75%;
 }

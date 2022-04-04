@@ -37,6 +37,30 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const updateButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const title = document.querySelector('#post-name').value.trim();
+    const description = document.querySelector('#post-desc').value.trim();
+    const id = event.target.getAttribute('data-id');
+
+    if (title && description) {
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({ title, description, id }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to Update post');
+      }
+    }
+  }
+};
+
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
@@ -44,3 +68,7 @@ document
 document
   .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
+
+document
+  .getElementById('update-list')
+  .addEventListener('click', updateButtonHandler);
