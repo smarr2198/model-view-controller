@@ -45,15 +45,15 @@ const updateButtonHandler = async (event) => {
 
     if (title && description) {
       const response = await fetch(`/api/posts/${id}`, {
-        method: 'POST',
-        body: JSON.stringify({ title, description, id }),
+        method: 'PUT',
+        body: JSON.stringify({ title, description }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.reload();
       } else {
         alert('Failed to Update post');
       }
