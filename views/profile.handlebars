@@ -24,7 +24,7 @@
   </div>
 
   {{#if posts.length}}
-    <div class='col-md-6'>
+    <div class='col-md-6 post-list' id='update-list'>
       <h3>Current Posts:</h3>
 
       {{#each posts as |post|}}
@@ -34,9 +34,8 @@
           </div>
           <div class='d-flex col-md-4'>
             <button
-              id='update-list'
               class='btn btn-sm btn-secondary mx-1'
-              data-id='{{post.id}}'
+              update-id='{{post.id}}'
             >UPDATE</button>
             <button
               class='btn btn-sm btn-danger post-list'

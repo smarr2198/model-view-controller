@@ -38,10 +38,10 @@ const delButtonHandler = async (event) => {
 };
 
 const updateButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
+  if (event.target.hasAttribute('update-id')) {
     const title = document.querySelector('#post-name').value.trim();
     const description = document.querySelector('#post-desc').value.trim();
-    const id = event.target.getAttribute('data-id');
+    const id = [event.target.getAttribute('update-id')];
 
     if (title && description) {
       const response = await fetch(`/api/posts/${id}`, {
